@@ -96,7 +96,7 @@ ScreenPipeApp
 ├── OutputHandler
 
 Diagrama visual
-!(./diagramas/arq.jpeg)
+![./diagramas/arq.png]
 
 A arquitetura demonstra separação de responsabilidades e desacoplamento parcial da camada de inteligência artificial.
 
