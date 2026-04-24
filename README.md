@@ -1,9 +1,9 @@
-# 📊 Auditoria de Maturidade em Ecossistemas LLM  
+# Auditoria de Maturidade em Ecossistemas LLM  
 ## Projeto: screenpipe
 
 ---
 
-## 👥 Equipe
+## Equipe
 
 - Gian Glauberty Santos Nascimento – 202300061616
 - Pedro César Figueiredo Carneiro – 202300061732
@@ -14,7 +14,7 @@
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Este repositório tem como objetivo apresentar uma auditoria de maturidade de um projeto baseado em Modelos de Linguagem (LLMs), utilizando como referência os modelos **CMMI-DEV (v2.0)** e **MPS.BR**.
 
@@ -22,7 +22,7 @@ O projeto analisado foi o screenpipe, uma aplicação open source que integra ca
 
 ---
 
-## 🔎 Sobre o Projeto Analisado
+## Sobre o Projeto Analisado
 
 É um sistema que permite capturar, processar e analisar informações provenientes da tela do usuário, utilizando técnicas de inteligência artificial e modelos de linguagem.
 
@@ -33,68 +33,47 @@ Sua arquitetura é modular, composta por:
 - Geração de saída
 
 O projeto segue um modelo de desenvolvimento colaborativo baseado em GitHub, utilizando issues, pull requests e versionamento contínuo.
-
-🔗 Repositório oficial:  
+ Repositório oficial:  
 https://github.com/screenpipe/screenpipe
 
 ---
 
-## 🧪 Metodologia da Auditoria
+## Metodologia da Auditoria
 
 A análise foi realizada com base em cinco eixos principais:
 
-### 🔵 1. Ciclo de Vida (GPR)
+### 1. Ciclo de Vida (GPR)
 - Análise de releases e issues
 - Identificação de práticas ágeis
 
-### 🟢 2. Engenharia de Requisitos (GRE)
+### 2. Engenharia de Requisitos (GRE)
 - Rastreamento de requisitos via:
   - Issues
   - Pull Requests
   - Código
 
-### 🟣 3. Arquitetura (PJR)
+### 3. Arquitetura (PJR)
 - Avaliação da estrutura modular
 - Identificação de desacoplamento da IA
 
-### 🟠 4. Verificação e Validação (V&V)
+### 4. Verificação e Validação (V&V)
 - Análise de workflows e testes
 - Avaliação da validação de IA
 
-### 🔴 5. Qualidade (GQA)
+### 5. Qualidade (GQA)
 - Verificação de padrões de contribuição
 - Análise de práticas de qualidade
 
 ---
 
-## 🔗 Rastreabilidade de Requisitos
-Não foram identificados processos formais de RFC (Request for Comments) no projeto. As propostas de funcionalidades e melhorias são realizadas diretamente por meio de Issues no GitHub, o que caracteriza uma abordagem mais ágil e menos formal na definição de requisitos.
+## Rastreabilidade de Requisitos
 
-### Requisito 1 (Correção de falha na gravação de áudio)
-- Issue: Relato de erro na gravação de áudio em ambiente macOS (https://github.com/screenpipe/screenpipe/issues/2903)
-- Pull Request: Correção implementada no módulo de captura de áudio (https://github.com/screenpipe/screenpipe/pull/2905)
-- Código: Alterações realizadas em arquivos relacionados ao sistema de captura de áudio (https://github.com/screenpipe/screenpipe/pull/2905/changes)
+[Detalhes na pasta do eixo 2](./requisitos/)
 
-### Requisito 2 (O servidor deixa de reiniciar após detectar uma instância já em execução durante a inicialização)
-- Issue:Descrição do bug (https://github.com/screenpipe/screenpipe/issues/2880)
-- Pull Request: Explicação da função de correção (https://github.com/screenpipe/screenpipe/pull/2892)
-- Código: Alterações na função do arquivo principal relacionados à conexão com o servidor (https://github.com/screenpipe/screenpipe/pull/2892/changes)
 
-### Requisito 3 (A aplicação no Windows entra em conflito no executor de loop de eventos “tao”)
-- Issue: Relatório especificando a origem do erro (https://github.com/screenpipe/screenpipe/issues/2495)
-- Pull Request: Explicação da solução para o “crash” (https://github.com/screenpipe/screenpipe/pull/2535)
-- Código: Alterações em 2 seções de arquivos direcionadas ao funcionamento no Windows (https://github.com/screenpipe/screenpipe/pull/2535/changes)
-
-Foi possível identificar rastreabilidade parcial entre requisitos e implementação por meio da relação entre Issues, Pull Requests e código. No entanto, essa rastreabilidade não é formalmente documentada, o que pode dificultar a gestão de mudanças.
 ---
 
-## 🏗️ Arquitetura (Visão Simplificada)
-ScreenPipeApp
-├── CaptureService
-├── ProcessingPipeline
-├── LLMService
-├── OutputHandler
-
+## Arquitetura (Visão Simplificada)
 Diagrama visual
 ![diagrama](diagramas/arq.png)
 
@@ -102,7 +81,7 @@ A arquitetura demonstra separação de responsabilidades e desacoplamento parcia
 
 ---
 
-## ⚙️ Principais Achados
+## Principais Achados
 
 - Uso de ciclo de vida ágil (issues + PRs)
 - Rastreamento de requisitos não formalizado
@@ -112,29 +91,19 @@ A arquitetura demonstra separação de responsabilidades e desacoplamento parcia
 
 ---
 
-## 🚀 Plano de Melhoria
+## Plano de Melhoria
 
 1. Implementar rastreabilidade formal de requisitos  
 2. Adotar mecanismos de validação das respostas da IA  
 
 ---
 
-## 🎥 Vídeo da Auditoria
-
-📺 Link do vídeo:  
-
+## Vídeo da Auditoria
+ Link do vídeo:  
 
 ---
 
-## 📁 Estrutura do Repositório
-
-/docs → documentação
-/diagramas → UML e imagens
-/anotacoes → análises da equipe
-
----
-
-## 📌 Considerações Finais
+## Considerações Finais
 
 O projeto apresenta boas práticas técnicas e alinhamento com metodologias ágeis, porém possui oportunidades de melhoria relacionadas à maturidade de processos, especialmente em requisitos, validação de IA e qualidade de software.
 
