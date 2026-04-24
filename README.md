@@ -94,6 +94,8 @@ A análise foi realizada com base em cinco eixos principais:
 1. Implementar rastreabilidade formal de requisitos  
 2. Adotar mecanismos de validação das respostas da IA  
 
+[Detalhamento](./plano_de_melhoria/)
+
 ---
 
 ## Vídeo da Auditoria
