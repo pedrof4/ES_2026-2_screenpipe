@@ -102,7 +102,49 @@ O fluxo entre Core e Pipes é assíncrono, permitindo:
 
 ## 5. Diagrama UML (Mermaid)
 
-![diagrama](../diagramas/DiagramaUML.png)
+```mermaid
+classDiagram
+direction TB
+
+class CaptureService {
+    +startCapture()
+    +getStreamData()
+}
+
+class ProcessingPipeline {
+    -llmProvider : ILLMService
+    +processData(data)
+    +setLLMProvider(provider)
+}
+
+class ILLMService {
+    <<interface>>
+    +generateResponse(prompt, context)
+}
+
+class OpenAIAdapter {
+    -apiKey
+    +generateResponse(prompt, context)
+}
+
+class LocalModelAdapter {
+    -modelPath
+    +generateResponse(prompt, context)
+}
+
+class OutputHandler {
+    +exportData(result)
+}
+
+CaptureService --> ProcessingPipeline : fornece dados
+ProcessingPipeline --> OutputHandler : exporta resultado
+
+ProcessingPipeline o--> ILLMService : strategy
+ILLMService <|.. OpenAIAdapter
+ILLMService <|.. LocalModelAdapter
+```
+
+---
 
 ## 6. Relação com CMMI e MPS.BR
 
@@ -130,7 +172,7 @@ Isso proporciona:
 - maior modularidade  
 - facilidade de testes  
 - manutenção simplificada  
-- substituição de provedores sem impacto estrutural
+- substituição de provedores sem impacto estrutural  
 
 Caracteriza, portanto, uma solução aderente às boas práticas de **Projeto e Construção de Software**.
 
@@ -140,7 +182,7 @@ Caracteriza, portanto, uma solução aderente às boas práticas de **Projeto e 
 
 O repositório do Screenpipe encontra-se em desenvolvimento acelerado, podendo sofrer mudanças arquiteturais frequentes.
 
-### Pontos sujeitos a evolução:
+### Pontos sujeitos a evolução
 
 - fronteira entre módulos nativos em **Rust**
 - responsabilidades delegadas ao ecossistema **Node.js**
@@ -155,5 +197,3 @@ Não foram aprofundadas rotinas internas de baixo nível, como:
 - **Voice Activity Detection (VAD)**
 - otimizações nativas de áudio
 - detalhes internos de performance do Core
-
----
