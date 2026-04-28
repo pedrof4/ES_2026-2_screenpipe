@@ -102,50 +102,7 @@ O fluxo entre Core e Pipes é assíncrono, permitindo:
 
 ## 5. Diagrama UML (Mermaid)
 
-```mermaid
-classDiagram
-    direction TB
-    
-    class CaptureService {
-        <<Rust Core>>
-        +startCapture() void
-        +getStreamData() DataStream
-    }
-
-    class ProcessingPipeline {
-        <<TypeScript/Python Pipe>>
-        -llmProvider: ILLMService
-        +processData(data: DataStream) void
-        +setLLMProvider(provider: ILLMService) void
-    }
-
-    class ILLMService {
-        <<interface>>
-        +generateResponse(prompt: String, context: DataStream) String
-    }
-
-    class OpenAIAdapter {
-        <<Adapter>>
-        -apiKey: String
-        +generateResponse(prompt: String, context: DataStream) String
-    }
-
-    class LocalModelAdapter {
-        <<Adapter>>
-        -modelPath: String
-        +generateResponse(prompt: String, context: DataStream) String
-    }
-
-    class OutputHandler {
-        +exportData(result: String) void
-    }
-
-    CaptureService --> ProcessingPipeline : Consome via API local
-    ProcessingPipeline --> OutputHandler : Delega saída
-
-    ProcessingPipeline o--> ILLMService : Strategy
-    ILLMService <|.. OpenAIAdapter : Implementa
-    ILLMService <|.. LocalModelAdapter : Implementa
+![diagrama](../diagramas/DiagramaUML.png)
 
 ## 6. Relação com CMMI e MPS.BR
 
